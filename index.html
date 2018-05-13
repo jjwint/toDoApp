@@ -6,18 +6,20 @@
 		<title>To-Do App</title>
 	</head>
 	<body>
-
-		<div>
+		<div id="formDiv" ng-controller="FormController as ctrl">
 			<h2>TODO List</h2>
 			<p>A place to store the things you have to do!</p>
-			<input type="text" placeholder="Filter your to-dos">
-
-			<input type="text" placeholder="Add your to-do">
-
-			<button>Add</button>
+			<form ng-submit="ctrl.sayHi();">
+				<input type="text" placeholder="Add your to-do" ng-model="ctrl.task">
+				<button type="submit">Add</button>
+				<ol>
+					<li ng-repeat="task in ctrl.taskList | filter: taskFilter">{{ task }}</li>
+				</ol>
+			</form>
+			<input type="text" placeholder="Filter your todos!" ng-model="taskFilter">
 		</div>
-
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 		<script src="module.js"></script>
+		<script src="formcontroller.js"></script>
 	</body>
 </html>

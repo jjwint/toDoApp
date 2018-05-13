@@ -1,0 +1,11 @@
+body {
+	background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+#formDiv {
+	margin: 10px auto;
+	width: 300px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+}
